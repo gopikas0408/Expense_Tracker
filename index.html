@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Expenses Tracker</title>
+  <link rel="stylesheet" href="./index.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Expenses Tracker</h1>
+      <small>Track expenses, edit, delete, and see monthly totals.</small>
+    </header>
+
+    <section class="card form-card">
+      <form id="expense-form">
+        <input type="hidden" id="expense-id" />
+        <div class="row">
+          <label>
+            Category
+            <select id="category" required>
+              <option value="">— select —</option>
+              <option>Food</option>
+              <option>Transport</option>
+              <option>Groceries</option>
+              <option>Entertainment</option>
+              <option>Bills</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <label>
+            Amount (₹)
+            <input id="amount" type="number" step="0.01" min="0.01" placeholder="100.00" required />
+          </label>
+        </div>
+
+        <div class="row">
+          <label style="flex:2">
+            Description
+            <input id="description" type="text" placeholder="Lunch, taxi, electricity..." />
+          </label>
+
+          <label>
+            Date
+            <input id="date" type="date" required />
+          </label>
+        </div>
+
+        <div class="actions">
+          <button type="submit" id="save-btn">Add Expense</button>
+          <button type="button" id="clear-btn" class="muted">Clear</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card summary-card">
+      <div class="summary-row">
+        <div>
+          <h3 id="total-month">₹0.00</h3>
+          <p>This month</p>
+        </div>
+        <div>
+          <h3 id="total-all">₹0.00</h3>
+          <p>Total</p>
+        </div>
+        <div>
+          <h3 id="count-all">0</h3>
+          <p>Transactions</p>
+        </div>
+      </div>
+      <div id="mini-chart" class="mini-chart" title="Spending by category"></div>
+    </section>
+
+    <section class="card table-card">
+      <div class="table-controls">
+        <input id="search" placeholder="Search description or category" />
+        <select id="filter-month">
+          <option value="all">All months</option>
+        </select>
+        <button id="export-csv" class="muted">Export CSV</button>
+        <button id="clear-all" class="danger">Delete All</button>
+      </div>
+
+      <table id="expenses-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Amount (₹)</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <footer class="footer">
+      <small>Built with HTML • CSS • JavaScript — data saved locally on this device</small>
+    </footer>
+  </main>
+
+  <script src="./js.js"></script>
+</body>
+</html>
