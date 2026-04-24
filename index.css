@@ -166,3 +166,24 @@ button.danger{
   .summary-row{flex-direction:column;align-items:flex-start}
   .table-controls{flex-direction:column;align-items:stretch}
 }
+
+
+.pra{
+  background:var(--glass);
+  border-radius:12px;
+  padding:16px;
+  text-align:center;
+}
+.pra h1{
+  margin:0;
+  font-size:1.5rem;
+  color: #4f46e5;
+}
+.pra p{
+  margin:8px 0 0;
+  color:var(--muted);
+  color: #ef4444;
+  background-color: aqua;
+  font-size: medium;
+  font-weight: bold;
+}
